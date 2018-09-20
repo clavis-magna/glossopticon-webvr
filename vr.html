@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>Glossopticon VR</title>
+  <meta name="description" content="Glossopticon project : WebVR">
+  <meta name="author" content="Andrew Burrell">
+
+  <link rel="stylesheet" href="css/vr-styles.css">
+
+  <!-- jquery and dat.gui -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/dat.gui.min.js"></script>
+
+  <!-- aframe and external components from cdn-->
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
+  <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
+
+  <!-- custom component -->
+  <script src="components/loader.js"></script>
+  <script src="components/audioController.js"></script>
+  <script src="components/cursorListener.js"></script>
+  <script src="components/metaData.js"></script>
+  <script src="components/keepAbove.js"></script>
+  <script src="components/distanceToCamera.js"></script>
+  <script src="components/enterExit.js"></script>
+  <script src="components/touchRot.js"></script>
+  <script src="components/touchMoveControls.js"></script>
+  <script src="components/audioGui.js"></script>
+  <script src="components/linkGui.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108233254-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108233254-1');
+  </script>
+</head>
+
+<body>
+  <!-- side-panel is used on non VR tablet and phone for navigation -->
+  <div class="side-panel"></div>
+
+
+  <a-scene loader fog="type: exponential; color: pink; density:0.005" enter-exit>
+    <!-- assets manager -->
+    <!-- most assets are loaded live -->
+    <a-assets>
+      <!-- world map - 2:1 ratio with a rectalinear projection & pacific at center-->
+      <img id="world" src="img/world_wide.png">
+
+      <img id="audio-icon" src="img/audio_2.png">
+      <img id="link-icon" src="img/link_2.png">
+    </a-assets>
+
+    <!-- map -->
+    <a-plane id="world-plane" height="500" width="1000" src="#world" position="0 0 0" rotation="-90 -90 0"></a-plane>
+
+    <!-- camera and reticle -->
+    <a-entity camera keep-above="yHeight:0.5" id="camera" universal-controls="movementControls: gamepad, keyboard, touch-movement, hmd; fly: true; movementEasingY: 15; movementAcceleration: 100; rotationControls: hmd, mouse, touch-rotation, gamepad; " position="-105 40 -80"
+      rotation="-16 250 0">
+      <a-entity id="inFront" position="0 0 -1.1"></a-entity>
+      <a-entity cursor="fuse: true; fuseTimeout: 800" raycaster="far: 20; interval: 100; objects: .clickable;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015" material="color: hotpink; shader: flat">
+        <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="800" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <!-- GUI -->
+    <a-plane id="infoGUISurround" position="0 0 -0.75" width="0.6" height="0.35" visible="true" material="shader:flat; transparent:false; opacity:1;">
+      <a-plane id="infoGUI" position="0 0.06 0" width="0.50" height="0.20" visible="true" material="transparent:false; opacity:1; color:white; shader: flat" text="font: font/roboto_extended.fnt; fontImage: font/roboto_extended.png; value: ; align: center; color:black; wrapCount:26; zOffset:0.02; opacity:1">
+        <a-animation attribute="text.opacity" begin="fade" to="1"></a-animation>
+      </a-plane>
+      <a-plane class="clickable" audio-gui id="audioIcon" position="0.180 -0.1 0.01" width="0.1" height="0.1" visible="true" material="shader:flat; opacity:1; src:#audio-icon; color:grey">
+        <a-animation attribute="material.opacity" begin="fade" to="1"></a-animation>
+      </a-plane>
+      <a-plane class="clickable" link-gui id="linkIcon" position="-0.180 -0.1 0.01" width="0.1" height="0.1" visible="true" material="shader:flat; opacity:1; src:#link-icon; color:grey">
+        <a-animation attribute="material.opacity" begin="fade" to="1"></a-animation>
+      </a-plane>
+      <a-animation attribute="material.opacity" begin="fade" to="1"></a-animation>
+    </a-plane>
+
+    <!-- Vive -->
+    <a-entity vive-controls="hand: right"></a-entity>
+
+    <!-- sky sphere -->
+    <a-sky color="pink"></a-sky>
+  </a-scene>
+</body>
+
+</html>

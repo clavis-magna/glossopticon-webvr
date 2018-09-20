@@ -1,0 +1,70 @@
+.logo{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.basic-copy{
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background: #70bg32;
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient(to top, #86c0cc, pink);
+  background: -moz-linear-gradient(to top, #86c0cc, pink);
+  background: -ms-linear-gradient(to top, #86c0cc, pink);
+  background: -o-linear-gradient(to top, #86c0cc, pink);
+  background: linear-gradient(to top, #86c0cc, pink);
+}
+
+body{
+  background-color: transparent;
+  background-position: center top;
+  min-height: 600px;
+}
+
+.full-width-image{
+  width: 100%;
+}
+
+.bg-trans{
+  //background-color: rgba(255,255,255,0.1);
+  background-color: transparent;
+}
+
+.cover{
+  background: url("../img/coverimage.png");
+  background-size: 100% 100%;
+}
+
+.title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+}
+
+.logo{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 55px;
+}
+
+.copy{
+  font-family: 'Roboto', sans-serif;
+  outline: 1px solid #aaa;
+  outline-offset: -10px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent;
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+}
+
+.abox{
+  background: url("../img/coverimage.png");
+  background-size: 100% 100%;
+}
