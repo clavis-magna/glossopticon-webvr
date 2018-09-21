@@ -1,6 +1,6 @@
 # glossopticon-webvr
 
-Glossopticon is a series of tools initially created for the visualisation of data from the PARADISEC Pacific and Region archive of linguistic data. This is an initial release of code and research that represents a WebVR, A-Frame based version of the project, with that hope that it is useful to other projects in either its current or extended form, and that improvements and fixes can be made to develop the tool further in an open manner. 
+Glossopticon is a series of tools initially created for the visualisation of data from the PARADISEC Pacific and Region archive of linguistic data. This is an initial release of code and research that represents a WebVR, A-Frame based version of the project, with that hope that it is useful to other projects in either its current or extended form, and that improvements and fixes can be made that will develop the tool further in an open manner. 
 
 ## Getting Started
 
