@@ -36,7 +36,7 @@ and utilising
 
 ## License
 
-This project is licensed under the GNU GPL License
+This project is licensed under the [GNU GPL](https://github.com/clavis-magna/glossopticon-webvr/blob/master/LICENSE) License
 
 ## Acknowledgments
 
