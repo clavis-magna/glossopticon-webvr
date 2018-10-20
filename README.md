@@ -4,12 +4,12 @@ Glossopticon is a series of tools initially created for the visualisation of dat
 
 ## Getting Started
 
-Download or clone the repository and run it on a web local server. If you do not have a workflow for this, the easiest workflow is to open the entire project in Brackets and run it using the inbuilt live server, or Atom and run it using the Atom live server plugin. The project has to run on a local web server (or be uploaded to a remote web server) and will generate errors if it is simply ran directly ion a browser due to cross origin domain issues.
+Download or clone the repository and run it on a web local server. If you do not have a workflow for this, the easiest workflow is to open the entire project in Brackets and run it using the inbuilt live server, or Atom and run it using the Atom live server plugin. The project has to run on a local web server (or be uploaded to a remote web server) and will generate errors if it is simply ran directly in a browser due to cross origin domain issues.
 
 ## Note
 
 * 'index.html' is used as the front page of the project as hosted from this repo. 
-* 'index-minimal.html' is a basic front page that can be adapted or replaced for use of this tool in other projects
+* 'index-minimal.html' is a basic front page that can be adapted or replaced for the use of this tool in other projects
 
 ## Built With
 
@@ -38,7 +38,7 @@ and utilising
 
 This project is licensed under the [GNU GPL](https://github.com/clavis-magna/glossopticon-webvr/blob/master/LICENSE) License
 
-## Acknowledgments
+## Acknowledgements
 
 * The Glossopticon VR project is a project by Rachel Hendery (Western Sydney University) and Andrew Burrell (University of Technology Sydney). It’s part of a larger Glossopticon VR and AR exhibition by Nick Thieberger (Melbourne University), Rachel Hendery, and Andrew Burrell. The project was funded by the Centre of Excellence for Language Dynamics (COEDL), through a Transdisciplinary and Innovation Grant.
 
