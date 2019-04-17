@@ -27,8 +27,16 @@ body{
   min-height: 600px;
 }
 
+.top{
+  margin-top: 40px;
+}
+
 .full-width-image{
   width: 100%;
+}
+
+.sub{
+  margin-top: 10px;
 }
 
 .bg-trans{
